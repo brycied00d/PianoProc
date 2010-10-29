@@ -20,7 +20,7 @@
 #include <fcntl.h>
 
 // LibPiano woo
-#include <piano.h>
+#include "piano.h"
 
 int main ()
 {
@@ -29,12 +29,13 @@ int main ()
 
 	PianoInit(&ph);
 
+/*
 	// Setup the PianoRequest
-	reqData.user
-	reqData.password
+	reqData.user=0;
+	reqData.password=0;
 	reqData.step=0;
 	printf("Logging in... ");
-	
+
 	// Complete the... something?
 	do
 	{
@@ -70,19 +71,19 @@ int main ()
 				BarUiMsg (MSG_NONE, "Ok.\n");
 			}
 		}
+*/
 		/* we can destroy the request at this point, even when this call needs
 		 * more than one http request. persistend data (step counter, e.g.) is
 		 * stored in req.data */
+/*
 		if (req.responseData != NULL) {
 			free (req.responseData);
 		}
 		PianoDestroyRequest (&req);
 	} while (*pRet == PIANO_RET_CONTINUE_REQUEST);
-
 	return 1;
 }
 
-/*
 PianoReturn_t PianoRequest (PianoHandle_t *, PianoRequest_t *,
 		PianoRequestType_t);
 
